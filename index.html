@@ -297,6 +297,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/extends-A-super-A/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dylan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dylan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/28/extends-A-super-A/" class="post-title-link" itemprop="url">泛型 extends & super</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-28 19:50:27 / Modified: 19:53:58" itemprop="dateCreated datePublished" datetime="2018-12-28T19:50:27+08:00">2018-12-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="lt-extends-A-gt-amp-lt-super-A-gt"><a href="#lt-extends-A-gt-amp-lt-super-A-gt" class="headerlink" title="&lt;? extends A&gt; &amp; &lt;? super A&gt;"></a>&lt;? extends A&gt; &amp; &lt;? super A&gt;</h1><p><strong>&lt;? extends A&gt;</strong>  上界通配符，放入A及A的子类，只能get()，并存于A或A的基类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list.add(<span class="keyword">new</span> A());</span><br><span class="line">list.add(<span class="keyword">new</span> ASubClass());</span><br><span class="line">A a = list.get();</span><br><span class="line">ASuperClass asc = list.get();</span><br></pre></td></tr></table></figure>
+<p>编译器只知道是A或A的子类，具体未知。</p>
+<p><strong>&lt;? super A&gt;</strong> 下界通配符，放入A及A的基类，只能add()，只能取出放入Object类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list.add(<span class="keyword">new</span> A());</span><br><span class="line">list.add(<span class="keyword">new</span> ASuperClass());</span><br><span class="line">Object a = list.get();</span><br></pre></td></tr></table></figure>
+<p>编译器只知道是A或A的基类，具体未知。所以Object作为任何类的父类符合要求。</p>
+<p><strong>PECS（Producer Extends Consumer Super</strong></p>
+<ol>
+<li>频繁往外读取内容的，适合用上界Extends。</li>
+<li>经常往里插入的，适合用下界Super。</li>
+</ol>
+<p><strong>? 通配符: </strong>无需关注具体类型，是未知的，可以调用任何与类型无关的方法。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/26/hello-world/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -471,7 +624,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
